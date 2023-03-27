@@ -23,7 +23,7 @@ pipeline {
             steps {
                 echo "Hello Java Express"
                 sh 'ls'
-                sh 'docker build -t  tcdmv/hello:${BUILD_NUMBER} .'
+                sh 'docker build -t  tcdmv/hello:1.0.0-${BUILD_NUMBER} .'
             }
         }
         stage('Docker Login'){
@@ -36,7 +36,7 @@ pipeline {
         }
         stage('Docker Push'){
             steps {
-                sh 'docker push tcdmv/hello:${BUILD_NUMBER}'
+                sh 'docker push tcdmv/hello:1.0.0-${BUILD_NUMBER}'
             }
         }
         stage('Docker deploy'){
