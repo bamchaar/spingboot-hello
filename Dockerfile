@@ -1,12 +1,12 @@
 FROM openjdk:11-jdk-slim
 # Define the Maven version
-ARG MAVEN_VERSION=3.8.2
+ARG MAVEN_VERSION=3.9.4
 
 # Install curl
 RUN apt-get update && apt-get install -y curl
 
 # Download Maven archive
-RUN curl -fsSL -o maven.tar.gz https://apache.osuosl.org/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz 
+RUN curl -fsSL -o maven.tar.gz https://dlcdn.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.tar.gz 
 
 # Check if the file was downloaded correctly
 RUN ls -l
