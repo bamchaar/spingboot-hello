@@ -57,8 +57,8 @@ pipeline {
                      withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                     sh "echo '$DOCKER_PASSWORD' | docker login -u '$DOCKER_USERNAME' --password-stdin"
                 }
-                sh " docker pull tcdmv/hello:1.0.0-${BUILD_NUMBER}"
-                sh 'docker run -itd -p  8081:8080 tcdmv/hello:${BUILD_NUMBER}'
+                sh " docker pull tcdmv/hello:1.0.-${BUILD_NUMBER}"
+                sh 'docker run -itd -p  8081:8080 tcdmv/hello:1.0.0-${BUILD_NUMBER}'
             }
         }
         stage('Archving') { 
