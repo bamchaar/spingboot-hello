@@ -1,5 +1,5 @@
 FROM openjdk:11-jdk-slim
-ARG MAVEN_VERSION=3.8.2
+ARG MAVEN_VERSION=3.8.3
 ARG MAVEN_HOME=/usr/share/maven
 
 
