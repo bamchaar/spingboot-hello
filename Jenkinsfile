@@ -43,7 +43,9 @@ pipeline {
             
             steps {
                  withCredentials([string(credentialsId: 'DockerId', variable: 'Dockerpwd')]) {
-                    sh "docker login -u tcdmv -p ${Dockerpwd}"
+                    sh "
+                     echo Dockerpwd | docker login -u DockerId --password-stdin
+"
                 }
             }                
         }
