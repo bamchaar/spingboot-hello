@@ -21,6 +21,7 @@
 		    <!-- Optional: if authentication is needed -->
 		    <sonar.login>abdel</sonar.login>
 		    <sonar.password>My sona Key 2023</sonar.password>
+		    <sonar.java.binaries>target/classes</sonar.java.binaries>
 	</properties>
 
 	<dependencies>
