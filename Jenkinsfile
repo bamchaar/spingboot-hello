@@ -54,7 +54,10 @@ pipeline {
         }
         stage('Docker deploy'){
             steps {
-               
+                     withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                    sh "echo '$DOCKER_PASSWORD' | docker login -u '$DOCKER_USERNAME' --password-stdin"
+                }
+                sh " docker pull tcdmv/hello:${BUILD_NUMBER}"
                 sh 'docker run -itd -p  8081:8080 tcdmv/hello:${BUILD_NUMBER}'
             }
         }
