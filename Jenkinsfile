@@ -43,7 +43,7 @@ pipeline {
             
             steps {
                  withCredentials([string(credentialsId: 'DockerId', variable: 'Dockerpwd')]) {
-                    sh "echo ${Dockerpwd} | docker login -u ${DockerId} --password-stdin"
+                    sh "echo '$Dockerpwd' | docker login -u '$DockerId' --password-stdin"
                 }
             }                
         }
