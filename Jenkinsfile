@@ -33,7 +33,10 @@ pipeline {
             steps {
                 echo "Hello Java Express"
                 sh 'ls'
-                sh 'docker build -t  tcdmv/hello:1.0.0-${BUILD_NUMBER} .'
+                sh '''
+                docker build -t  tcdmv/hello:1.0.0-${BUILD_NUMBER} .
+                RUN apt-get update && apt-get install -y maven
+                '''
             }
         }
         stage('Docker Login'){
