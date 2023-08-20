@@ -10,7 +10,13 @@ pipeline {
                 // Run Maven on a Unix agent.
               
                 sh "mvn clean compile"
-                sh"mvn clean verify sonar:sonar"
+                sh""
+                mvn clean verify sonar:sonar \
+  -Dsonar.projectKey=sonar_Helloworld-mvn \
+  -Dsonar.projectName='sonar_Helloworld-mvn' \
+  -Dsonar.host.url=http://54.209.208.168:9000 \
+  -Dsonar.token=sqp_bf9e5692fcb190dda2ddedfe1880002e80966942
+                ""
 
                 
 
