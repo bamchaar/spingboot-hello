@@ -10,7 +10,7 @@ pipeline {
                 // Run Maven on a Unix agent.
               
                 sh "mvn clean compile"
-                mvn clean verify sonar:sonar
+                sh "mvn clean verify sonar:sonar"
 
             }
         }
