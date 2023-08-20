@@ -22,6 +22,10 @@ RUN rm maven.tar.gz
 # Set Maven environment variables
 ENV MAVEN_HOME=/usr/share/maven
 ENV PATH=$MAVEN_HOME/bin:$PATH
+
+COPY ./pom.xml ./pom.xml
+COPY ./src ./src
+
 RUN mvn clean && mvn package
 
 ADD target/javaexpress-springboot-docker.jar javaexpress-springboot-docker.jar
