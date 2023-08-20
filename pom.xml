@@ -19,8 +19,6 @@
 		    <!-- SonarQube properties -->
 		    <sonar.host.url>http://54.209.208.168:9000</sonar.host.url>
 		    <!-- Optional: if authentication is needed -->
-		    <sonar.login>abdel</sonar.login>
-		    <sonar.password>My sona Key 2023</sonar.password>
 		    <sonar.java.binaries>target/classes</sonar.java.binaries>
 	</properties>
 
