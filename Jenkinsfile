@@ -15,7 +15,7 @@ pipeline {
         }
   stage('SonarQube Analysis') {
       steps {
-      sh "mvn clean verify sonar:sonar -Dsonar.projectKey=$SONAR_TOKEN"
+      sh "mvn clean verify sonar:sonar -Dsonar.projectKey=${SONAR_TOKEN}"
      }
   }
         stage('deploy') { 
