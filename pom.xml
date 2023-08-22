@@ -17,7 +17,7 @@
 	<properties>
 		   <java.version>1.8</java.version>
 		    <!-- SonarQube properties -->
-		    <sonar.host.url>http://3.141.33.213:9000</sonar.host.url>
+		    <sonar.host.url>http://34.229.87.210:9000</sonar.host.url>
 		    <!-- Optional: if authentication is needed -->
 		    <sonar.java.binaries>target/classes</sonar.java.binaries>
 	</properties>
