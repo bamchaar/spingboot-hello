@@ -17,7 +17,7 @@ pipeline {
     checkout scm
   }
   stage('SonarQube Analysis') {
-    def mvn = tool 'Default Maven';
+    def mvn = tool 'mvn';
     withSonarQubeEnv() {
       sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=java-sonarqube-helloworld-src"
     }
