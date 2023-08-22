@@ -15,7 +15,7 @@ pipeline {
         }
   stage('SonarQube Analysis') {
       steps {
-      sh "mvn clean verify sonar:sonar -Dsonar.projectKey=java-sonarqube-helloworld-src"
+      sh "mvn clean verify sonar:sonar -Dsonar.projectKey=$SONAR_TOKEN"
      }
   }
         stage('deploy') { 
