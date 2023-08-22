@@ -2,7 +2,7 @@ pipeline {
     agent any 
     tools {
         maven "mvn"
-    
+        docker "docker"
     }
     stages {
         stage('Compile and Clean') { 
