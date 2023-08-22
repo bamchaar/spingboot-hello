@@ -18,9 +18,7 @@ pipeline {
   }
   stage('SonarQube Analysis') {
     def mvn = tool name: 'mvn', type: 'Maven';
-    withSonarQubeEnv(sonar) {
       sh "mvn clean verify sonar:sonar -Dsonar.projectKey=java-sonarqube-helloworld-src"
-    }
   }
         stage('deploy') { 
             
